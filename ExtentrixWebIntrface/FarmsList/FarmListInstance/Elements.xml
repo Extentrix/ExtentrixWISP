@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Citrix Farms"
+                OnQuickLaunch="FALSE"
+                Hidden="TRUE"
+                TemplateType="10001"
+                Url="Lists/Farms"
+                Description="Farms List">
+    <Data>      
+     <Rows>
+        <Row>
+          <Field Name="Title">MF</Field>                    
+          <Field Name="Url">picazio.dyndns-web.com</Field>
+          <Field Name="Port">8080</Field>
+        </Row>
+      </Rows>
+      </Data>
+  </ListInstance>
+  
+</Elements>

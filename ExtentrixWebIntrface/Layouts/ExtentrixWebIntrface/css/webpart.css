@@ -1,0 +1,66 @@
+﻿.main table
+{
+    text-align: left;       
+} 
+.toolbar table
+{
+    text-align: right;
+}
+.toolbar table td
+{
+    text-align: right;
+}
+
+table.toolbar {float: right;}
+
+.clear {clear: both;}
+
+.breadcrumb
+{
+    float: left;
+} 
+.switcher {float: right;}
+.favourites-view
+{
+    vertical-align: top;
+}
+.favourites-view td
+{
+    vertical-align: top;
+}
+.favourites-app
+{
+}
+.favourites-app div 
+{
+    float: left;
+}
+.favourites-app div table
+{
+    text-align: left;
+    width: 200px;
+}
+.notfavourites-app
+{
+}
+.notfavourites-app div 
+{
+    float: right;
+}
+.notfavourites-app div table
+{    
+    width: 200px;
+}
+
+.credentials input
+{
+    width: 150px;
+}
+
+.credentials-expired
+{
+    color: #ff0000;
+}
+
+.main .icons { list-style: none; margin: 10px; padding: 0;}
+.main .icons li { float: left; width: 100px;}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Citrix Settings"
+                OnQuickLaunch="FALSE"
+                Hidden="TRUE"
+                TemplateType="10003"
+                Url="Lists/CitrixSettings"
+                Description="My List Instance">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">GoThrough</Field>
+          <Field Name="Value">false</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

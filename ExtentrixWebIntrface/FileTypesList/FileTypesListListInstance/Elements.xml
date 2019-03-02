@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="File Types"
+                OnQuickLaunch="TRUE"
+                TemplateType="10002"
+                Hidden="TRUE"
+                Url="Lists/FileTypesList"
+                Description="My List Instance">  
+  <Data>
+    <!--<Rows>
+      <Row>
+          <Field Name="Title">doc</Field>
+          <Field Name="AppInternalName">WORd</Field>
+          <Field Name="AppDisplayName">Word</Field>
+          <Field Name="FarmName">MF</Field>          
+       </Row>
+      <Row>
+        <Field Name="Title">rtf</Field>
+        <Field Name="AppInternalName">WordPad</Field>
+        <Field Name="AppDisplayName">WordPad</Field>
+        <Field Name="FarmName">MF</Field>        
+      </Row>      
+    </Rows>-->
+  </Data>
+  </ListInstance>
+</Elements>

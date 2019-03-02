@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A05A334-0031-463D-B87B-8C9607E5B495}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtentrixWebIntrface</RootNamespace>
+    <AssemblyName>ExtentrixWebIntrface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <AssemblyDeploymentTarget>GlobalAssemblyCache</AssemblyDeploymentTarget>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BusinessData, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.SecureStoreService, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContentRedirection\FileTypesUtility.cs" />
+    <Compile Include="ContentRedirection\RedirectionApplication.cs" />
+    <Compile Include="ControlTemplates\ExtentrixWebIntrface\ErrorPageUserControl.ascx.cs">
+      <DependentUpon>ErrorPageUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\ExtentrixWebIntrface\ErrorPageUserControl.ascx.designer.cs">
+      <DependentUpon>ErrorPageUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\ExtentrixWebIntrface\LicenseValidationControl.ascx.cs">
+      <DependentUpon>LicenseValidationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\ExtentrixWebIntrface\LicenseValidationControl.ascx.designer.cs">
+      <DependentUpon>LicenseValidationControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\Constants.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\EventLoger.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\Farms.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\Favorites.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\Folder.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\ApplicationsTree.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\IconsExpiration.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\IconsManager.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\Logger.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\LogLocationEnum.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\PublishedApplicationEx.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\PublishedApplication.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\SecureStoreManager.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\UserProfile.cs" />
+    <Compile Include="ExtentrixWIWebPart\EWSUtils\WebServiceAPI.cs" />
+    <Compile Include="ExtentrixWIWebPart\ExtentrixWebPartProperties.cs" />
+    <Compile Include="ExtentrixWIWebPart\ExtentrixWIWebPart.cs" />
+    <Compile Include="ExtentrixWIWebPart\ExtentrixWIWebPartUserControl.ascx.cs">
+      <DependentUpon>ExtentrixWIWebPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtentrixWIWebPart\ExtentrixWIWebPartUserControl.ascx.designer.cs">
+      <DependentUpon>ExtentrixWIWebPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtentrixWIWebPart\Util.cs" />
+    <Compile Include="Features\Lists\Lists.EventReceiver.cs">
+      <DependentUpon>Lists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirection.aspx.cs">
+      <DependentUpon>ContentRedirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirection.aspx.designer.cs">
+      <DependentUpon>ContentRedirection.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirectionAdminPage.aspx.cs">
+      <DependentUpon>ContentRedirectionAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirectionAdminPage.aspx.designer.cs">
+      <DependentUpon>ContentRedirectionAdminPage.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\FileTypePage.aspx.cs">
+      <DependentUpon>FileTypePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\FileTypePage.aspx.designer.cs">
+      <DependentUpon>FileTypePage.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\NewDocumentApp.aspx.cs">
+      <DependentUpon>NewDocumentApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ExtentrixWebIntrface\Pages\NewDocumentApp.aspx.designer.cs">
+      <DependentUpon>NewDocumentApp.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\LicenseManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\ApplicationItem.cs" />
+    <Compile Include="WebService\ApplicationItemEx.cs" />
+    <Compile Include="WebService\Assembler.cs" />
+    <Compile Include="WebService\Bits.cs" />
+    <Compile Include="WebService\Credentials.cs" />
+    <Compile Include="WebService\GIF.cs" />
+    <Compile Include="WebService\GifStream.cs" />
+    <Compile Include="WebService\Hex.cs" />
+    <Compile Include="WebService\HTTPManager.cs" />
+    <Compile Include="WebService\ICAConnectionOptions.cs" />
+    <Compile Include="WebService\ICAFields.cs" />
+    <Compile Include="WebService\ICAGenerator.cs" />
+    <Compile Include="WebService\ICASession.cs" />
+    <Compile Include="WebService\IconMaker.cs" />
+    <Compile Include="WebService\ImageUtility.cs" />
+    <Compile Include="WebService\LLib.cs" />
+    <Compile Include="WebService\NamespaceConstants.cs" />
+    <Compile Include="WebService\Parser.cs" />
+    <Compile Include="WebService\PresentationServer.cs" />
+    <Compile Include="WebService\Validator.cs" />
+    <Compile Include="WebService\WebService.cs" />
+    <Compile Include="WebService\WebServiceConfig.cs" />
+    <Compile Include="WebService\WindowsCredentials.cs" />
+    <Compile Include="WebService\WindowsIdentity.cs" />
+    <Compile Include="WebService\WSConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppFavoritesList\AppFavoritesListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d2e2b0a3-5bec-408a-b52f-5fcbd2f56ef6}</SharePointProjectItemId>
+    </None>
+    <None Include="AppFavoritesList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{655ca178-2986-4d26-9bf8-dffe45d79d04}</SharePointProjectItemId>
+    </None>
+    <None Include="CONFIG\Extentrix\Extentrix.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CONFIG\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{73f49d7f-9bee-4366-b5e3-5380dbbaab40}</SharePointProjectItemId>
+    </None>
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8b6a138b-3bac-4ec1-b9fe-d4e3dd8b70b3}</SharePointProjectItemId>
+    </None>
+    <None Include="ExtentrixWIWebPart\ExtentrixWIWebPart.webpart">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExtentrixWIWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e2d2eab3-dc54-4b1c-ad86-f54ba95d87b3}</SharePointProjectItemId>
+    </None>
+    <None Include="FarmsList\FarmListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8dbba616-d26e-489f-b5c5-e31c96fa534b}</SharePointProjectItemId>
+    </None>
+    <None Include="FarmsList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{041e4a80-6e31-42c0-80fa-b0a98725c6ba}</SharePointProjectItemId>
+    </None>
+    <None Include="Farm\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{736a2963-f6a6-4c4c-9712-b99b1b9c3aaf}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\ContentRedirection\ContentRedirection.feature">
+      <FeatureId>{26772f92-9347-439a-9804-1f180f9c5455}</FeatureId>
+    </None>
+    <None Include="Features\Lists\Lists.feature">
+      <FeatureId>{a4948caf-cd56-43a7-8d60-f1ec2530a593}</FeatureId>
+    </None>
+    <None Include="FileTypesList\FileTypesListListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4f0027b9-fd09-4b2b-abf7-c9d600a9dc61}</SharePointProjectItemId>
+    </None>
+    <None Include="FileTypesList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fbede2ee-ddf6-463f-9b35-6655b05d2a1f}</SharePointProjectItemId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{87bad072-a67e-43ce-ab9c-de4d6d047e6c}</SharePointProjectItemId>
+    </None>
+    <None Include="ISAPI\Extentrix\default.ica" />
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{952712c8-1770-45db-ab35-4157fc3274ae}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0c140073-2598-46c3-ab2c-6ac829c6c290}</SharePointProjectItemId>
+    </None>
+    <None Include="MenuItems\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d6b1bdf0-0fd7-47d5-830d-35977f2be6e5}</SharePointProjectItemId>
+    </None>
+    <None Include="SettingsList\SettingsListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{489d2b90-979e-49e3-b409-26602749addf}</SharePointProjectItemId>
+    </None>
+    <None Include="SettingsList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{992a74e4-8f18-4005-995a-a657647ad3aa}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\Package.package">
+      <PackageId>{13b81d46-5a0f-42b4-b574-b6dd8a9bee2a}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Features\WebPart\WebPart.feature">
+      <FeatureId>{845492d5-4acc-43be-a1c7-62af79acf078}</FeatureId>
+    </None>
+    <None Include="Features\WebPart\WebPart.Template.xml">
+      <DependentUpon>WebPart.feature</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppFavoritesList\Elements.xml" />
+    <Content Include="AppFavoritesList\AppFavoritesListInstance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AppFavoritesList\Schema.xml" />
+    <Content Include="ControlTemplates\ExtentrixWebIntrface\ErrorPageUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ControlTemplates\ExtentrixWebIntrface\LicenseValidationControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="FarmsList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FarmsList\FarmListInstance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FarmsList\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Farm\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\ContentRedirection\ContentRedirection.Template.xml">
+      <DependentUpon>ContentRedirection.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Lists\Lists.Template.xml">
+      <DependentUpon>Lists.feature</DependentUpon>
+    </Content>
+    <Content Include="FileTypesList\Elements.xml" />
+    <Content Include="FileTypesList\FileTypesListListInstance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FileTypesList\Schema.xml" />
+    <Content Include="Images\ExtentrixWebIntrface\doc.png" />
+    <Content Include="Images\ExtentrixWebIntrface\doc_large.PNG" />
+    <Content Include="Images\ExtentrixWebIntrface\doc_large1.png" />
+    <Content Include="Images\ExtentrixWebIntrface\icons\large\default.gif" />
+    <Content Include="Images\ExtentrixWebIntrface\icons\large\folder.gif" />
+    <Content Include="ExtentrixWIWebPart\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ExtentrixWIWebPart\ExtentrixWIWebPartUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Images\ExtentrixWebIntrface\icons\small\default.gif" />
+    <Content Include="Images\ExtentrixWebIntrface\stopedit.ico" />
+    <Content Include="Images\ExtentrixWebIntrface\edit.ico" />
+    <Content Include="Images\ExtentrixWebIntrface\top.gif" />
+    <Content Include="Images\ExtentrixWebIntrface\up.gif" />
+    <Content Include="Images\ExtentrixWebIntrface\icons\small\folder.gif" />
+    <Content Include="Layouts\ExtentrixWebIntrface\css\webpart.css" />
+    <Content Include="Layouts\ExtentrixWebIntrface\js\content-redirection.js" />
+    <Content Include="Layouts\ExtentrixWebIntrface\js\jquery-1.4.1.js" />
+    <Content Include="Layouts\ExtentrixWebIntrface\js\jquery-1.4.1.min.js" />
+    <Content Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirection.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\ExtentrixWebIntrface\Pages\ContentRedirectionAdminPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\ExtentrixWebIntrface\Pages\FileTypePage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\ExtentrixWebIntrface\Pages\NewDocumentApp.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Libs\log4net.dll" />
+    <Content Include="MenuItems\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SettingsList\Elements.xml" />
+    <Content Include="SettingsList\Schema.xml" />
+    <Content Include="SettingsList\SettingsListInstance\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BB1F664B-9266-4fd6-B973-E1E44974B511}">
+        <DeploymentConfigurations>
+          <DeploymentConfiguration Name="New Deployment Configuration">
+            <DeploymentSteps>Microsoft.VisualStudio.SharePoint.PreDeploymentCommand;Microsoft.VisualStudio.SharePoint.PostDeploymentCommand;Microsoft.VisualStudio.SharePoint.RetractSolution;Microsoft.VisualStudio.SharePoint.AddSolution;Microsoft.VisualStudio.SharePoint.ActivateFeatures</DeploymentSteps>
+            <RetractionSteps>Microsoft.VisualStudio.SharePoint.RetractSolution</RetractionSteps>
+          </DeploymentConfiguration>
+        </DeploymentConfigurations>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

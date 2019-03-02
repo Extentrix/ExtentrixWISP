@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="13b81d46-5a0f-42b4-b574-b6dd8a9bee2a" solutionId="13b81d46-5a0f-42b4-b574-b6dd8a9bee2a" resetWebServer="false" name="ExtentrixWebIntrface" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="log4net.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\log4net.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="845492d5-4acc-43be-a1c7-62af79acf078" />
+    <featureReference itemId="a4948caf-cd56-43a7-8d60-f1ec2530a593" />
+    <featureReference itemId="26772f92-9347-439a-9804-1f180f9c5455" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="87bad072-a67e-43ce-ab9c-de4d6d047e6c" />
+    <projectItemReference itemId="8b6a138b-3bac-4ec1-b9fe-d4e3dd8b70b3" />
+    <projectItemReference itemId="0c140073-2598-46c3-ab2c-6ac829c6c290" />
+    <projectItemReference itemId="73f49d7f-9bee-4366-b5e3-5380dbbaab40" />
+    <projectItemReference itemId="952712c8-1770-45db-ab35-4157fc3274ae" />
+  </projectItems>
+</package>

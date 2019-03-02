@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="AppFavorites"
+                OnQuickLaunch="FALSE"
+                Hidden="TRUE"
+                TemplateType="10000"
+                Url="Lists/AppFavorites"
+                Description="Applications Favorites List">    
+  </ListInstance>
+</Elements>

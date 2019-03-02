@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+ <!-- <CustomAction
+  Sequence="250"
+  Id="ECBItemCustomization"
+  RegistrationType="List"
+  RegistrationId="101"
+  Location="EditControlBlock"
+  ImageUrl="/_layouts/images/ExtentrixWebIntrface/doc.png"
+  Title="Edit with Application Delivered by Citrix">
+    <UrlAction Url="javascript:window.open('{SiteUrl}/_layouts/ExtentrixWebIntrface/ContentRedirection.aspx?FileUrl={ItemUrl}');"/>
+  </CustomAction>-->
+  <CustomAction
+       ScriptSrc="/_layouts/ExtentrixWebIntrface/js/jquery-1.4.1.js"
+       Location="ScriptLink"
+       Sequence="100">
+  </CustomAction>
+  <CustomAction
+       ScriptSrc="/_layouts/ExtentrixWebIntrface/js/content-redirection.js"
+       Location="ScriptLink"
+       Sequence="110">
+  </CustomAction>
+  <CustomAction
+   Id="Ribbon.Library.Actions.AddAButton"
+   Location="CommandUI.Ribbon"
+   RegistrationId="101"
+   RegistrationType="List"
+   Title="Add a Ribbon Button">
+    <CommandUIExtension>
+      <CommandUIDefinitions>
+        <CommandUIDefinition
+          Location="Ribbon.Documents.New.Controls._children">
+          <Button Id="Ribbon.Documents.New.NewCitrixDocument"
+            Sequence="15"
+            Command="NewCitrixDocumentCommand"
+            Image16by16="/_layouts/images/ExtentrixWebIntrface/doc.png"
+            Image32by32="/_layouts/images/ExtentrixWebIntrface/doc_large.png"
+            LabelText="Document Delivered by Citrix"
+            TemplateAlias="o1" />
+        </CommandUIDefinition>
+        <CommandUIDefinition Location="Ribbon.Documents.EditCheckout.Controls._children">
+          <Button
+            Id="Ribbon.Documents.EditCheckout.EditCitrixDocument"
+            Sequence="15"
+            Command="EditCitrixDocumentCommand"
+            Image16by16="/_layouts/$Resources:core,Language;/images/formatmap16x16.png" Image16by16Top="-144" Image16by16Left="-80"
+            Image32by32="/_layouts/$Resources:core,Language;/images/formatmap32x32.png" Image32by32Top="-256" Image32by32Left="-32"
+            LabelText="Edit with Citrix"
+            TemplateAlias="o1"
+              />
+        </CommandUIDefinition>
+        <!--<CommandUIDefinition Location="Ribbon.ListForm.Display.Manage.Controls._children">
+          <Button
+            Id="Ribbon.ListForm.Display.Manage.EditCitrixDocument"
+            Sequence="15"
+            Command="EditCitrixDocumentDisplayCommand"
+            Image16by16="/_layouts/$Resources:core,Language;/images/formatmap16x16.png" Image16by16Top="-144" Image16by16Left="-80"
+            Image32by32="/_layouts/$Resources:core,Language;/images/formatmap32x32.png" Image32by32Top="-256" Image32by32Left="-32"
+            LabelText="Edit with Citrix"
+            TemplateAlias="o1"
+              />
+        </CommandUIDefinition>-->
+        
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler
+          Command="NewCitrixDocumentCommand"
+          CommandAction="javascript:documentApp_openModalDialog('New');" />        
+        <CommandUIHandler
+           Command="EditCitrixDocumentCommand"
+           CommandAction="javascript:openEditDocument();" 
+           EnabledScript="javascript:enableDisableButton();"/>
+        <!--<CommandUIHandler
+           Command="EditCitrixDocumentDisplayCommand"
+           CommandAction="javascript:openEditDocument('Close');" />--> 
+      </CommandUIHandlers>
+    </CommandUIExtension>
+  </CustomAction>
+  <CustomActionGroup
+		Id="ContentRedirectionMenu"
+		Location="Microsoft.SharePoint.SiteSettings"
+		Title="Extentrix WISP Settings"
+		Sequence="1000"
+		ImageUrl="_layouts/images/SiteSettings_SiteActions_48x48.png"
+		/>
+  <CustomAction
+		Id="ContentRedirectionPage"
+		Location="Microsoft.SharePoint.SiteSettings"
+    RootWebOnly="TRUE"
+		GroupId="ContentRedirectionMenu"
+    RequireSiteAdministrator="TRUE"
+		Sequence="10"
+		Title="Content Redirection"
+		Description="Page used to manage content redirection settings.">
+    <UrlAction Url="~sitecollection/_layouts/ExtentrixWebIntrface/Pages/ContentRedirectionAdminPage.aspx" />
+  </CustomAction>
+  <CustomAction
+		Id="FarmsSettingsMenu"
+		Location="Microsoft.SharePoint.SiteSettings"
+		GroupId="ContentRedirectionMenu"
+    RequireSiteAdministrator="TRUE"
+    RootWebOnly="TRUE"
+		Sequence="20"
+		Title="Farms Settings"
+		Description="Farms Settings list used to manage Citrix farms options.">
+    <UrlAction Url="~sitecollection/Lists/Farms/AllItems.aspx" />
+  </CustomAction>
+
+</Elements>
